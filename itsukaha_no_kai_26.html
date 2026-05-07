@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロジェクト報告 2025-2026年版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; -webkit-text-size-adjust: 100%; }
+
+  :root {
+    --bg: #ffffff;
+    --paper: #ffffff;
+    --ink: #000000;
+    --ink-soft: #333333;
+    --ink-mute: #767676;
+    --line-soft: #e6e6e6;
+    --line-mid: #cccccc;
+    --line-strong: #000000;
+    --accent: #06c755; /* LINEグリーン */
+    --highlight: #fff352; /* LINEイエロー寄り */
+    --row-alt: #f7f7f7;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.85;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0 20px 80px;
+  }
+
+  /* パンくず風のトップバー */
+  .top-bar {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .top-bar .crumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .top-bar .sep {
+    color: var(--line-mid);
+  }
+
+  /* タイトル */
+  .title-block {
+    padding: 56px 0 48px;
+  }
+
+  h1.title {
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .title-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+
+  .version-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--ink);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .meta-divider {
+    width: 1px;
+    height: 12px;
+    background: var(--line-mid);
+  }
+
+  /* セクション */
+  .section {
+    margin-top: 64px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.005em;
+    line-height: 1.4;
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--line-strong);
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  /* 結論プレーン文章 */
+  .conclusion {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+
+  .conclusion p {
+    margin: 0 0 20px 0;
+  }
+
+  .conclusion p:last-child {
+    margin-bottom: 0;
+  }
+
+  .highlight {
+    font-weight: 700;
+    color: var(--ink);
+    background: linear-gradient(transparent 60%, var(--highlight) 60%);
+    padding: 0 1px;
+  }
+
+  /* 定義リスト風テーブル（LINEヤフー会社概要スタイル） */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid var(--line-strong);
+    font-size: 15px;
+  }
+
+  .data-table tr {
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .data-table th {
+    background: var(--row-alt);
+    text-align: left;
+    padding: 18px 16px;
+    font-weight: 700;
+    color: var(--ink);
+    width: 36%;
+    vertical-align: top;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .data-table td {
+    padding: 18px 20px;
+    color: var(--ink-soft);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  /* 月次レポートカード */
+  .month-list {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .month-card {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 24px 0;
+  }
+
+  .month-card-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .month-num {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .month-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    background: var(--ink);
+    color: white;
+    letter-spacing: 0.08em;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .month-tag.current {
+    background: var(--accent);
+  }
+
+  .month-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+    padding: 8px 0;
+    align-items: start;
+  }
+
+  .month-row + .month-row {
+    border-top: 1px dashed var(--line-soft);
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+
+  .row-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    padding-top: 4px;
+  }
+
+  .row-content {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+
+  .row-content.result {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .result-emoji {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 16px;
+  }
+
+  /* 課題と分析（テーブル風） */
+  .issue-table {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .issue-block {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 24px 0;
+  }
+
+  .issue-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .issue-name .badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    background: var(--ink);
+    color: white;
+    margin-left: 8px;
+    letter-spacing: 0.05em;
+    vertical-align: 2px;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .issue-detail-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .issue-detail-row + .issue-detail-row {
+    border-top: 1px dashed var(--line-soft);
+  }
+
+  .detail-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+    padding-top: 4px;
+  }
+
+  .detail-content {
+    color: var(--ink-soft);
+  }
+
+  /* 学び（Before / After） */
+  .learning-list {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .learning-card {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .learning-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .ba-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 8px 0;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .ba-label {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 0;
+    text-align: center;
+    letter-spacing: 0.08em;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .ba-label.before {
+    background: var(--row-alt);
+    color: var(--ink-mute);
+    border: 1px solid var(--line-soft);
+  }
+
+  .ba-label.after {
+    background: var(--ink);
+    color: white;
+  }
+
+  .ba-content {
+    color: var(--ink-soft);
+    padding-top: 2px;
+  }
+
+  /* フッター注意書き */
+  .footer-note {
+    margin-top: 64px;
+    padding: 28px 24px;
+    background: var(--row-alt);
+    border-left: 4px solid var(--ink);
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+  }
+
+  .footer-note .label {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .footer-note ul {
+    margin: 12px 0;
+    padding-left: 22px;
+  }
+
+  .footer-note li {
+    margin-bottom: 6px;
+  }
+
+  .small-note {
+    color: var(--ink-mute);
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  /* リンクなど */
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* 補足解説セクション */
+  .explainer-card {
+    border: 1px solid var(--line-soft);
+    border-radius: 4px;
+    padding: 24px 22px;
+    margin-bottom: 16px;
+    background: var(--paper);
+  }
+
+  .explainer-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .explainer-tag {
+    display: inline-block;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    background: var(--row-alt);
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+  }
+
+  .explainer-title {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  .explainer-body {
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--ink-soft);
+  }
+
+  .explainer-body p {
+    margin: 0 0 14px 0;
+  }
+
+  .explainer-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .explainer-body .ikegami {
+    color: var(--ink);
+    font-weight: 700;
+    background: linear-gradient(transparent 60%, var(--highlight) 60%);
+    padding: 0 1px;
+  }
+
+  /* リンクサムネカード */
+  .link-card {
+    display: flex;
+    border: 1px solid var(--line-soft);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    margin-top: 14px;
+    transition: border-color 0.15s, transform 0.15s;
+    background: var(--paper);
+  }
+
+  .link-card:hover {
+    border-color: var(--line-strong);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .link-thumb {
+    flex-shrink: 0;
+    width: 96px;
+    background: linear-gradient(135deg, var(--ink) 0%, #444 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 12px;
+    line-height: 1.3;
+  }
+
+  .link-thumb.gov {
+    background: linear-gradient(135deg, #1a3a6e 0%, #2c5fa1 100%);
+  }
+
+  .link-thumb.news {
+    background: linear-gradient(135deg, #7a1f1f 0%, #b03030 100%);
+  }
+
+  .link-thumb.pr {
+    background: linear-gradient(135deg, #06753a 0%, #06c755 100%);
+  }
+
+  .link-body {
+    flex: 1;
+    padding: 12px 14px;
+    min-width: 0;
+  }
+
+  .link-domain {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .link-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .link-desc {
+    font-size: 11px;
+    color: var(--ink-mute);
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  /* CTAボックス */
+  .cta-box {
+    margin-top: 32px;
+    padding: 28px 24px;
+    background: var(--ink);
+    color: white;
+    border-radius: 4px;
+  }
+
+  .cta-label {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .cta-title {
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .cta-body {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #d0d0d0;
+  }
+
+  .cta-body .accent {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 480px) {
+    .container { padding: 0 16px 60px; }
+    h1.title { font-size: 30px; }
+    .section-title { font-size: 21px; }
+    .month-row { grid-template-columns: 80px 1fr; gap: 12px; }
+    .issue-detail-row { grid-template-columns: 90px 1fr; gap: 12px; }
+    .ba-row { grid-template-columns: 70px 1fr; }
+    .data-table th { width: 32%; padding: 14px 10px; font-size: 13px; }
+    .data-table td { padding: 14px 12px; font-size: 14px; }
+    .row-content, .detail-content, .ba-content { font-size: 14.5px; }
+    .conclusion { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- トップバー -->
+  <div class="top-bar">
+    <span class="crumb">プロジェクト報告</span>
+    <span class="sep">　/　</span>
+    <span class="crumb">2025-2026年版</span>
+  </div>
+
+  <!-- タイトル -->
+  <div class="title-block">
+    <h1 class="title">プロジェクト報告</h1>
+    <div class="title-meta">
+      <span class="version-tag">2025-2026 EDITION</span>
+      <span class="meta-divider"></span>
+      <span>下記の通り、進捗を報告いたします。</span>
+    </div>
+  </div>
+
+  <!-- 結論 -->
+  <div class="section">
+    <div class="section-title">結論</div>
+    <div class="section-subtitle">CONCLUSION</div>
+    <div class="conclusion">
+      <p>本年も、惜しくも秘書を招集できなかったものの、<span class="highlight">プライム上場企業2社への本番導入・5年越しの直接契約・遅延に遅延を重ねた書籍の発刊という三重の成果</span>を背景に、飲み会前のトークとしては前年を大幅に上回るROIを確保したと判断する。</p>
+      <p>また、<span class="highlight">本年最大の発見として「秘書を乗せる車がなかった」という構造的欠陥を特定し、黒色の車を購入することで「あとは乗せるだけ」の状態を確立した。</span></p>
+      <p>来年は「秘書が来なかった理由 2026-2027年版」報告書を<span class="highlight">事前に準備済み</span>とすることが既定路線。一方、求める秘書の解像度は引き続き向上中。「華奢さ」に加え<span class="highlight">「会社が3回潰れかけても動じない胆力」</span>を条件に含めることを提案する。</p>
+    </div>
+  </div>
+
+  <!-- 主要指標（LINEヤフー会社概要っぽいテーブル） -->
+  <div class="section">
+    <div class="section-title">主要指標</div>
+    <div class="section-subtitle">KEY METRICS</div>
+    <table class="data-table">
+      <tr>
+        <th>本番導入</th>
+        <td>プライム上場企業 2社（2026年2月）</td>
+      </tr>
+      <tr>
+        <th>直接契約獲得</th>
+        <td>5年越しの直契化（5次請 → 2次請 → 直接契約）</td>
+      </tr>
+      <tr>
+        <th>書籍発刊</th>
+        <td>2025年9月発刊（初期予定2024年1月から1年8ヶ月遅延）</td>
+      </tr>
+      <tr>
+        <th>会社の潰れかけ</th>
+        <td>年3回（うち2回は顧客に救われる）</td>
+      </tr>
+      <tr>
+        <th>ソフトウェア売上比率</th>
+        <td>約15%（前年比 大幅上昇）</td>
+      </tr>
+      <tr>
+        <th>秘書招集数</th>
+        <td>0名（3年連続）</td>
+      </tr>
+      <tr>
+        <th>新規装備</th>
+        <td>黒色の車（搭乗者：未定）</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 課題と分析 -->
+  <div class="section">
+    <div class="section-title">課題と分析</div>
+    <div class="section-subtitle">ISSUES & ANALYSIS</div>
+
+    <div class="issue-table">
+      <div class="issue-block">
+        <div class="issue-name">候補者の不在<span class="badge">2年連続</span></div>
+        <div class="issue-detail-row">
+          <div class="detail-label">原因分析</div>
+          <div class="detail-content">コネなし／予算なし／本気度なし／お遊びなし<br><span class="highlight">＋ 車なし（NEW）</span></div>
+        </div>
+        <div class="issue-detail-row">
+          <div class="detail-label">再発防止策</div>
+          <div class="detail-content">もっと遊ぶことで自然な母集団形成をはかる<br><span class="highlight">＋ 黒色の車を購入（解決済）</span></div>
+        </div>
+      </div>
+
+      <div class="issue-block">
+        <div class="issue-name">会社が潰れかけ問題<span class="badge">年3回</span></div>
+        <div class="issue-detail-row">
+          <div class="detail-label">原因分析</div>
+          <div class="detail-content">自分しか受注できない構造（営業も納品も属人化）</div>
+        </div>
+        <div class="issue-detail-row">
+          <div class="detail-label">再発防止策</div>
+          <div class="detail-content">①素人でも売れる商品に磨き込む／②商品をシンプルな単位に分ける／③プロ人材に頑張ってオファーする</div>
+        </div>
+      </div>
+
+      <div class="issue-block">
+        <div class="issue-name">戦略思想の見直し</div>
+        <div class="issue-detail-row">
+          <div class="detail-label">原因分析</div>
+          <div class="detail-content">船井出身の癖でランチェスター（強豪と戦わずして勝つ）に囚われすぎ</div>
+        </div>
+        <div class="issue-detail-row">
+          <div class="detail-label">再発防止策</div>
+          <div class="detail-content">真っ向から強豪と向き合うことに切替。比較検討で勝てるように</div>
+        </div>
+      </div>
+
+      <div class="issue-block">
+        <div class="issue-name">中途半端なリソース配分</div>
+        <div class="issue-detail-row">
+          <div class="detail-label">原因分析</div>
+          <div class="detail-content">中途半端な結果しか出ずモヤモヤ発生</div>
+        </div>
+        <div class="issue-detail-row">
+          <div class="detail-label">再発防止策</div>
+          <div class="detail-content">「死んでもいいからソフトウェアに金ぶっこむ」極端配分に変更</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- スケジュール進捗 -->
+  <div class="section">
+    <div class="section-title">スケジュール進捗</div>
+    <div class="section-subtitle">MONTHLY TIMELINE</div>
+
+    <div class="month-list">
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.05</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">事例ナシ・マーケ準備全部自分・ブースに代表本人が立つというフルスタック出展。ただし「弱い組織しかできない強み」と前向きに変換し全力投球。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">「いつかは！の会」開催。3年連続で「来年こそ秘書を呼ぼう！」宣言が発令。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">😇</span>学習なし／ただし出展は手応えアリ</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.06</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">組織のセールスが機能せずストレスMAX。エンプラ営業のプロでもナイ。「営業」ではなく<span class="highlight">「顧客の期待に応えるためにできることを追求する」</span>＝<span class="highlight">愛で営業</span>という哲学に到達。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">愛で秘書を呼べないか検討。呼べない。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">💗</span>愛は無限、予算は有限</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.07</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">会社のキャッシュフロー悪化、潰れる危機（<span class="highlight">今年2回目</span>）。文部科学省のDXハイスクール構想にツテで滑り込み数ヶ月サバイブ。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">友人・縁故採用がいいと言うけど「出自によるよなー」と組織作りに悩む。秘書も出自によるのか…？</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🏫</span>文科省に救われる</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.08</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">5月の出展からの<span class="highlight">PoC 1社開始</span>。フルスタック出展、無事に成果として接続。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">営業活動に没頭しすぎて秘書のことを忘れる。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🎯</span>5月の自分グッジョブ</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.09</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content"><span class="highlight">2024年1月予定→2025年3月予定→2025年9月、ついに発刊。</span>遅延を重ねた書籍、世に出る。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">サイン会で秘書チャンス…と妄想したが、サイン会は開かれない。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">📚</span>達観の境地で発刊</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.10</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content"><span class="highlight">3ヶ月でソフトウェアによる業務成果を出すことに成功。</span>「死んでもいいから金ぶっこむ」戦略が効いてきた。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">成果が出てる時の秘書チャンスは納品で消滅する説。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🚀</span>極端な配分が極端な結果を出す</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.11</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">引き続き納品で死ぬ。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">資本主義の深淵、覗き続ける（Level 2継続）</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🌀</span>恒例</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2025.12</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">研修案件を受注し続けるが、結局「自分の限界の限界を超えた受注」しか取れず<span class="highlight">会社が潰れそうに（今年3回目）</span>。とはいえソフトウェアの売上比率は15%まで上昇。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">年末、T井さんと再会。<span class="highlight">クリスマスプレゼントしたつもりが、結局してもらい過ぎて完敗。</span>敵わない。<span class="small-note">（去年の「バチコーン年末」リベンジは戦況悪化で終了）</span></div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">👩‍💼</span>年末の秘書は実家に帰りがちなのでここは仕方ない</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2026.01</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">年末年始は人生について考える。<span class="highlight">顧客が「うちをサバイブさせるため」に年間一括で年始に支払ってくれる</span>奇跡。本当に顧客に生かされている。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">初詣で「今年こそ秘書を…」より先に「今年こそ顧客に応えたい」が来てしまう。優先順位の逆転現象。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🙏</span>顧客 &gt; 秘書（人生で初）</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2026.02</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content"><span class="highlight">プライム上場企業2社に本番導入。</span></div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">そういえば、秘書がいなかった。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">👩‍💼</span>2月の秘書は忙しいのでここは仕方ない</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2026.03</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content"><span class="highlight">「組織を変えないとこれ以上の変化はない」</span>と判断。売上の天井が完全に自分依存。<span class="highlight">友人含めて辞めてもらう意思決定</span>。痛い。でも必要。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content"><span class="highlight">問いの転換が起こる。</span><br>「どんな秘書がいいか？」<br>↓<br><span class="highlight">「お前は秘書にモテるのか？」</span><br>↓<br>結局、<span class="highlight">車だな。</span>と。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🚗</span>論点の昇華（秘書 → 自分の市場価値 → 車）</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2026.04</span>
+          <span class="month-tag">REPORT</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content"><span class="highlight">ついに顧客事例を公開。</span>受託の通信会社案件、2021年スタートの<span class="highlight">5次請→2次請→今月から直接契約。5年越し</span>。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">「秘書を採用する予算」というワード自体が遠い惑星の言語に聞こえる。<span class="small-note">（2年連続）</span></div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🤝</span>継続は力なり、を地で行く5年</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <div class="month-card-head">
+          <span class="month-num">2026.05</span>
+          <span class="month-tag current">◀ NOW</span>
+        </div>
+        <div class="month-row">
+          <div class="row-label">主な出来事</div>
+          <div class="row-content">月末にGartner Data &amp; Analytics Japan。<span class="highlight">1年前にKADOKAWA様との出会いはここ</span>。今年は顧客事例を持って成長率を上げに行く。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">秘書チャンス</div>
+          <div class="row-content">3月に発見した「結局、車」という論点を実行に移す。<br><br>横に乗せるならゴリゴリのブラックがえっちぃ😘、という結論に至り、<span class="highlight">黒色の車を購入。</span><br><br>逆に言えば<span class="highlight">「あとは乗せるだけ」</span>の状態を確立。</div>
+        </div>
+        <div class="month-row">
+          <div class="row-label">結果</div>
+          <div class="row-content result"><span class="result-emoji">🚗</span>装備：完了／搭乗者：未定<br><span class="small-note">😇 達観 ◀ イマここ！（昨年と同じ位置だが中身は別物）</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 学び -->
+  <div class="section">
+    <div class="section-title">本年の学び</div>
+    <div class="section-subtitle">LEARNINGS（真面目枠）</div>
+
+    <div class="learning-list">
+      <div class="learning-card">
+        <div class="learning-name">戦略思想</div>
+        <div class="ba-row">
+          <div class="ba-label before">BEFORE</div>
+          <div class="ba-content">ランチェスター（強豪と戦わずして勝つ）に囚われすぎ</div>
+        </div>
+        <div class="ba-row">
+          <div class="ba-label after">AFTER</div>
+          <div class="ba-content">向き合うからこそ、結果として差別化すべきポイントが明確になる。これが学び。</div>
+        </div>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-name">リソース配分</div>
+        <div class="ba-row">
+          <div class="ba-label before">BEFORE</div>
+          <div class="ba-content">中途半端な配分でモヤモヤを生産</div>
+        </div>
+        <div class="ba-row">
+          <div class="ba-label after">AFTER</div>
+          <div class="ba-content">「死んでもいいからソフトウェアに金ぶっこむ」極端配分</div>
+        </div>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-name">モチベーション</div>
+        <div class="ba-row">
+          <div class="ba-label before">BEFORE</div>
+          <div class="ba-content">「自分の苦しみが報われない、報われたい」</div>
+        </div>
+        <div class="ba-row">
+          <div class="ba-label after">AFTER</div>
+          <div class="ba-content">「辞めらんねぇよ…（照）」応援してくれる人にいい報告をしたい</div>
+        </div>
+      </div>
+
+      <div class="learning-card">
+        <div class="learning-name">投資家対応</div>
+        <div class="ba-row">
+          <div class="ba-label before">BEFORE</div>
+          <div class="ba-content">時価総額を上げるためのファンドレイズが難しい</div>
+        </div>
+        <div class="ba-row">
+          <div class="ba-label after">AFTER</div>
+          <div class="ba-content">やりながら勉強。失敗して当たり前。後で悔やんでもいい</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 補足解説 -->
+  <div class="section">
+    <div class="section-title">補足解説</div>
+    <div class="section-subtitle">EXPLAINER（池上彰風に、わかりやすく）</div>
+
+    <div class="explainer-card">
+      <div class="explainer-head">
+        <span class="explainer-tag">解説 01</span>
+        <span class="explainer-title">そもそも、DXハイスクール構想って何ですか？</span>
+      </div>
+      <div class="explainer-body">
+        <p>いい質問ですね〜。これ、文部科学省が始めた高校向けの補助金事業なんです。</p>
+        <p>大学では情報・データサイエンス系の学部新設が進んでいるんですが、<span class="ikegami">「高校段階でデジタルや数学に触れていないと、そもそも理系・データ系の学部に進学する子が増えない」</span>という課題があったんですね。</p>
+        <p>そこで2024年度から始まったのが「高等学校DX加速化推進事業」、通称<span class="ikegami">DXハイスクール</span>です。情報・数学を重視するカリキュラムや、ICTを活用した文理横断的な探究学習に取り組む高校に対して、<span class="ikegami">1校あたり最大1,000万円の環境整備費</span>が支援されるんです。</p>
+        <p>初年度の2024年度は<span class="ikegami">全国1,010校</span>が採択。これ、全国の高校の約4校に1校という規模感です。決して小さな話ではありません。</p>
+        <p>つまり、ヒデが今年「文科省案件で救われた」のは、こういう国家戦略の追い風があったから、というわけなんですね〜。</p>
+        <a href="https://www.mext.go.jp/a_menu/shotou/shinkou/shinko/mext_02974.html" class="link-card" target="_blank" rel="noopener">
+          <div class="link-thumb gov">文部<br>科学省</div>
+          <div class="link-body">
+            <div class="link-domain">mext.go.jp</div>
+            <div class="link-title">高等学校DX加速化推進事業（DXハイスクール）</div>
+            <div class="link-desc">文部科学省公式ページ。事業概要・採択校一覧・取組事例集など</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="explainer-head">
+        <span class="explainer-tag">解説 02</span>
+        <span class="explainer-title">データマネジメントが国家資格化される、ってどういうこと？</span>
+      </div>
+      <div class="explainer-body">
+        <p>これも大きなニュースなんですよ〜。</p>
+        <p>経済産業省が、IT国家試験「情報処理技術者試験」に<span class="ikegami">「データマネジメント（管理）」という新しい区分</span>を追加することを発表しました。導入は<span class="ikegami">2027年度</span>の予定です。</p>
+        <p>これね、ただ資格が増えるだけの話じゃないんです。情報処理技術者試験の枠組みが大きく変わるのは<span class="ikegami">2009年以来、約15年ぶり</span>。国が「これからのデジタル人材に必要なスキルはこれだ」と公式に示すメッセージなんですね。</p>
+        <p>背景には、生成AIの登場があります。AIを使うには「学習させるデータ」が必要ですが、そのデータが整っていないと、AIはまともに動かない。だから<span class="ikegami">「データを整備・管理できる専門家」</span>が、社会にとって不可欠になってきた、というわけです。</p>
+        <p>ヒデが「データカタログのSaaS タヅナ」をやっている領域が、まさにこの<span class="ikegami">「データマネジメント」</span>。国が国家資格として認定するほど、これからの社会で必要とされる仕事なんですよ〜。</p>
+        <a href="https://www.nikkei.com/article/DGXZQOUA219D40R20C25A5000000/" class="link-card" target="_blank" rel="noopener">
+          <div class="link-thumb news">日経<br>新聞</div>
+          <div class="link-body">
+            <div class="link-domain">nikkei.com</div>
+            <div class="link-title">情報処理技術者試験に「データ管理」新設へ デジタル人材のニーズ変化に対応</div>
+            <div class="link-desc">経済産業省は2027年度までに国家試験「情報処理技術者試験」に新区分を新設</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="explainer-card">
+      <div class="explainer-head">
+        <span class="explainer-tag">解説 03</span>
+        <span class="explainer-title">これまでの実績の参考リンク</span>
+      </div>
+      <div class="explainer-body">
+        <p>本報告書で言及した書籍発刊・顧客事例公開のプレスリリースは、それぞれこちら。報告書の信憑性を担保するための一次ソースになります。</p>
+        <a href="https://prtimes.jp/main/html/rd/p/000000078.000105601.html" class="link-card" target="_blank" rel="noopener">
+          <div class="link-thumb pr">PRESS<br>RELEASE</div>
+          <div class="link-body">
+            <div class="link-domain">prtimes.jp</div>
+            <div class="link-title">遅延に遅延を重ねた書籍、ついに発刊（2025年9月）</div>
+            <div class="link-desc">2024年1月予定→2025年3月予定→2025年9月。1年8ヶ月の遅延の末に発刊</div>
+          </div>
+        </a>
+        <a href="https://prtimes.jp/main/html/rd/p/000000117.000105601.html" class="link-card" target="_blank" rel="noopener">
+          <div class="link-thumb pr">PRESS<br>RELEASE</div>
+          <div class="link-body">
+            <div class="link-domain">prtimes.jp</div>
+            <div class="link-title">ついに顧客事例を公開（2026年4月）</div>
+            <div class="link-desc">プライム上場企業との取り組みを公式事例としてリリース</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="cta-label">ONE MORE THING</div>
+      <div class="cta-title">AIを使って業務を変えたい！となったら、聞いてください 🚀</div>
+      <div class="cta-body">
+        生成AIをどう業務に組み込むか、データをどう整えていくか、そういう相談にはいつでも乗ります。本気で困っていたら、本気で考えます。<br><br>
+        ちなみにこの報告書、<span class="accent">Claude（クロード）</span>と話しながら一緒に作りました。AIネイティブで仕事を変えていく感覚、こんな感じです。気になったら声かけてください。
+      </div>
+    </div>
+  </div>
+  <div class="footer-note">
+    <span class="label">⭐ 本資料の取扱いについて（Web版限定）</span>
+    本ドキュメントは、当会を欠席した者が、それでも近況を伝えたいという身勝手な動機により作成されたものです。本来は紙で配るべきところ、Web版にしたのには理由があります。
+    <ul>
+      <li>みんなのことが好きだからこそ、ここまで赤裸々に話してます ⭐</li>
+      <li>ここだけの話だからね ⭐</li>
+      <li>会場でこの話を朗読されると死ぬので、絶対やめてください ⭐</li>
+    </ul>
+    <p style="margin: 16px 0 0 0;"><strong>欠席の理由について。</strong>友人の不幸があり、本会を欠席させていただいています。本来であれば現地で皆さんに会いたかった、というのが正直なところです。</p>
+    <p style="margin: 14px 0 0 0;">そして、会社が年3回潰れかけ、組織を一度ほどき直し、納品で何度か死んだ一年を過ごす中で、心底実感したのは <span class="highlight">日常の健康って本当に大事</span>、ということ。だから今、北海道のサウナに行きたい。本気で。「ととのう」を経由しないと、来年の自分が立ち上がらない気がしています。</p>
+    <p style="margin: 14px 0 0 0;"><strong>去年→今年のアップデート（健康編）：</strong>枕を<span class="highlight">「羊のいらない枕」</span>に変えました。寝言が少なくなりました。地味ですが、これも一年の確かな進捗です。</p>
+    <p style="margin: 14px 0 0 0;">本来であれば現地で乾杯しながらお話ししたかった内容を、ぎゅっと詰め込みました。来年こそは秘書を呼べる男になって、現地で会いましょう。それまで、お元気で。</p>
+  </div>
+
+</div>
+
+</body>
+</html>
